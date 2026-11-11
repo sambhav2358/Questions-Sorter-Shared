@@ -1191,13 +1191,6 @@
                     </button>
                 </div>
 
-                <!-- #4 Interactive Option Eliminator (A B C D) -->
-                <div class="m3-icon-group m3-icon-group-wb shrink-0 px-1 gap-1" title="Cross out ruled-out options">
-                    <button type="button" onclick="window.app.toggleEliminateOption('A')" data-opt-btn="A" class="wb-opt-elim opt-elim-btn">A</button>
-                    <button type="button" onclick="window.app.toggleEliminateOption('B')" data-opt-btn="B" class="wb-opt-elim opt-elim-btn">B</button>
-                    <button type="button" onclick="window.app.toggleEliminateOption('C')" data-opt-btn="C" class="wb-opt-elim opt-elim-btn">C</button>
-                    <button type="button" onclick="window.app.toggleEliminateOption('D')" data-opt-btn="D" class="wb-opt-elim opt-elim-btn">D</button>
-                </div>
 
                 <!-- Manual Timer (Starts ONLY when clicked) -->
                 <button type="button" id="padTimerBtn" onclick="window.app.toggleQuestionTimer()" ondblclick="window.app.resetQuestionTimer()" class="h-8 px-2 rounded-full m3-surface-high border border-[var(--md-outline-variant)] text-[10.5px] font-mono font-extrabold flex items-center gap-1 shrink-0" title="Click: Start/Pause (T) • Double-Click: Reset">
@@ -3625,18 +3618,6 @@ CRITICAL RULES FOR ZERO TEXT CLIPPING & ZERO CLUBBING:
                         <button onclick="window.app.toggleQBool(${q.id}, 'solved')" class="card-solved-btn m3-icon-group-btn ${q.solved ? 'active-state' : ''}" title="${q.solved ? 'Solved' : 'Unsolved'}">
                             <i class="${q.solved ? 'ph-fill ph-check-circle' : 'ph-bold ph-circle'}"></i>
                         </button>
-
-                        <button onclick="window.app.openQuestionTagMenu(${q.id}, this)" class="m3-icon-group-btn" title="Tag">
-                            <i class="ph-bold ph-tag"></i>
-                        </button>
-
-                        <button onclick="window.app.openSplitModal(${q.id})" class="m3-icon-group-btn" title="Split or Trim">
-                            <i class="ph-bold ph-scissors"></i>
-                        </button>
-
-                        <button onclick="window.app.deleteQ(${q.id})" class="m3-icon-group-btn hover:!bg-rose-600 hover:!text-white" title="Delete">
-                            <i class="ph-bold ph-trash"></i>
-                        </button>
                     </div>
                 </div>
 
@@ -3775,12 +3756,7 @@ CRITICAL RULES FOR ZERO TEXT CLIPPING & ZERO CLUBBING:
                     </div>
 
                     <div class="flex items-center gap-1 shrink-0 ml-auto">
-                        <!-- #4 Option Eliminator in Preview -->
-                        <div class="m3-icon-group m3-icon-group-wb shrink-0 px-1 gap-1" title="Cross out ruled-out options">
-                            ${['A', 'B', 'C', 'D'].map(opt => `
-                                <button type="button" onclick="window.app.toggleEliminateOption('${opt}', ${q.id})" class="opt-elim-btn ${elimList.includes(opt) ? 'eliminated' : ''}">${opt}</button>
-                            `).join('')}
-                        </div>
+                        
 
                         <button type="button" onclick="window.app.toggleQuestionTimer()" ondblclick="window.app.resetQuestionTimer()" class="h-8 px-2.5 rounded-full m3-surface-high border border-[var(--md-outline-variant)] text-[11px] font-mono font-extrabold flex items-center gap-1 shrink-0" title="Click: Start/Pause (T) • Double-Click: Reset">
                             <i class="${timerIconClass}"></i>

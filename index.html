@@ -3758,7 +3758,7 @@ CRITICAL RULES FOR ZERO TEXT CLIPPING & ZERO CLUBBING:
                     <div class="flex items-center gap-1 shrink-0 ml-auto">
                         
 
-                        <button type="button" onclick="window.app.toggleQuestionTimer()" ondblclick="window.app.resetQuestionTimer()" class="h-8 px-2.5 rounded-full m3-surface-high border border-[var(--md-outline-variant)] text-[11px] font-mono font-extrabold flex items-center gap-1 shrink-0" title="Click: Start/Pause (T) • Double-Click: Reset">
+                        <button type="button" class="h-8 px-2.5 rounded-full m3-surface-high border border-[var(--md-outline-variant)] text-[11px] font-mono font-extrabold flex items-center gap-1 shrink-0">
                             <i class="${timerIconClass}"></i>
                             <span class="popup-timer-text">${timerText}</span>
                         </button>
@@ -3770,18 +3770,11 @@ CRITICAL RULES FOR ZERO TEXT CLIPPING & ZERO CLUBBING:
                             <button type="button" onclick="window.app.togglePopupQuestionBool('solved', ${q.id})" class="m3-icon-group-btn ${q.solved ? 'active-state' : ''}" title="Solved (S)">
                                 <i class="${q.solved ? 'ph-fill ph-check-circle' : 'ph-bold ph-circle'}"></i>
                             </button>
-                            <button type="button" onclick="window.app.openQuestionTagMenu(${q.id}, this)" class="m3-icon-group-btn ${q.noteTag ? 'active-state' : ''}" title="Tag">
-                                <i class="ph-bold ph-tag"></i>
-                            </button>
                         </div>
 
                         <div class="m3-icon-group m3-icon-group-wb shrink-0">
                             <button type="button" onclick="window.app.closeImagePopup(); window.app.openSplitModal(${q.id});" class="m3-icon-group-btn" title="Split or Trim">
                                 <i class="ph-bold ph-scissors"></i>
-                            </button>
-                            <button type="button" onclick="window.app.openScratchpadFromPopup(${q.id})" class="m3-icon-group-btn gap-1 text-[11px] font-bold" title="Open Whiteboard (Horizontal Screen Only)">
-                                <i class="ph-bold ph-pencil-line"></i>
-                                <span class="hidden md:inline">Whiteboard</span>
                             </button>
                             <button type="button" onclick="window.app.closeImagePopup()" class="m3-icon-group-btn active-state" title="Close (Esc)">
                                 <i class="ph-bold ph-x"></i>
